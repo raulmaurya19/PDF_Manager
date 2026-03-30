@@ -1,0 +1,9 @@
+[project]
+name = "25-02-2026-pdf-manager"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pymupdf==1.27.2.2",
+]
