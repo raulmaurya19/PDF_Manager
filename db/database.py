@@ -23,9 +23,26 @@ def init_db():
     total_pages INTEGER
     )
 """)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS page_visits (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        document_id INTEGER,
+        page_number INTEGER,
+        timestamp TEXT
+    )
+""")
     
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS app_visits (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        event_type TEXT,
+        timestamp TEXT
+    )
+""")
+
+
     conn.commit()
-    print("DB operation successfull!")
+    #print("DB operation successfull!")
     conn.close()
 
 

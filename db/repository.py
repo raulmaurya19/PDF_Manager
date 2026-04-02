@@ -59,4 +59,16 @@ class DocumentRepository:
 
         #List of document objects
         return [Document(*row) for row in rows]
+    
+    def get_all_documents(self):
+        conn = get_connection()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT * FROM documents")
+        rows = cursor.fetchall()
+        conn.close()
+
+        return [Document(*row) for row in rows]
+
+
 
